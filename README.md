@@ -38,3 +38,56 @@ gcc *.c -0 tarea1
 # Funcionando Correctamente:
 - Crear categorias.
 - Eliminar categorias junto a las tareas que esten en ella.
+- Mostrar todas las categorias creadas.
+- Registrar tareas, guardando su nombre, descripcion, categoria, hora y fecha de ingreso.
+- Atender tareas en orden de primera ingresada.
+- Mostrar todas las tareas por realizar.
+- Mostrar las tareas filtrando por categoria.
+
+# problemas conocidos
+- Si me paso de los caracteres permitidos al momento de ingresar los datos, el programa suelta error.
+
+# A mejorar
+- Permitir la personalizacion de tareas una vez creadas.
+- Mejorar la interfaz para el usuario.
+
+# Ejemplo de uso
+ 
+# Paso 1: Registrar una nueva categoria
+Se comienza creando una categoria para las tareas.
+Opcion seleccionada: 1) Nueva Categoria
+Ingrese la categoria: Universidad
+Categoria Agregada con Exito. 
+El sistema registra la categoria Universidad. 
+
+# Paso 2: Registar una nueva tarea
+Teniendo una categoria agregada, puedo registar tareas en esa categoria.
+Opcion seleccionada: 4) Registrar tarea
+Ingresa el categoria de la tarea: Universidad
+Categoria ingresa con exito. 
+Ingresa el nombre de la tarea: Tarea estructura de datos
+Nombre ingresado con exito.
+Ingresa la descripcion de la tarea: Entregar para el dia 12 de abril
+Descripcion ingresada con exito.
+El sistema va verificando, si se ingreso correctamente la informacion. Luego la ingresa en la categoria.
+
+# Paso 3: Visualizacion de tareas
+El usuario puede visualizar todas las tareas registras.
+Opcion seleccionada: 6) Visualizacion de Tareas
+1) nombre: Tarea estructura de datos
+   categoria: Universidad
+   Ingreso: 11:28 11/04/2026
+
+
+# paso 4: Atender siguiente tarea
+El usuario informa si realizo la tarea
+Opcion seleccionada: 5) Atender Siguiente Tarea
+Atendiendo: Tarea estructura de datos.
+Descripcion: entregar para el dia 12 de abriil.
+Categoria: Universidad.
+Hora y fecha de ingreso: 11:28 11/04/2026
+
+¿Realizo la tarea? (Si/No): Si
+Tarea realizada!!!
+El sistema muestra la informacion de la tarea a realiazar y pregunta si se completo, para eliminarla
+
