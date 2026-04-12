@@ -2,9 +2,9 @@
 
 # Descripción
 
-Este sistema permite a los usuarios registrar  y gestionar las tareas. Los usuarios pueden crear y eliminar categorías, 
-ingresar las tareas por categoría y atender las tareas. Este programa fue diseñado para mejorar la eficiencia de las tareas de los usuarios,
-asegurando que se atiendan según su orden de llegada.
+Este sistema permite a los usuarios registrar y gestionar sus tareas. Los usuarios pueden crear y eliminar categorías, 
+ingresar las tareas segun su categoría y atenderlas. 
+Este programa fue diseñado para mejorar la eficiencia de las tareas de los usuarios, asegurando que se atiendan según su orden de llegada.
 
 # Como compilar y ejecutar
 
@@ -42,7 +42,7 @@ gcc *.c -o tarea1
 
 ## Funcionando Correctamente:
 - Crear categorías.
-- Eliminar categorías junto a las tareas que esten en ella.
+- Eliminar categorías junto a las tareas que estén en ella.
 - Mostrar todas las categorías creadas.
 - Registrar tareas, guardando su nombre, descripción, categoría, hora y fecha de ingreso.
 - Atender tareas según su orden de ingreso.
@@ -103,7 +103,7 @@ Categoría: Universidad.
 Hora y fecha de ingreso: 11:28 11/04/2026
 
 ¿Realizó la tarea? (Si/No): Si
-Tarea realizada!!!
+¡¡¡Tarea realizada!!!
 ```
 El sistema muestra la información de la tarea a realizar y pregunta si se completó, para eliminarla.
 
@@ -134,4 +134,4 @@ Opción seleccionada: Filtrado por Categoría
 Ingresa la categoría: Universidad
 1) nombre de la tarea: Tarea estructura de datos
 ```
-el sistema muestra solo las tareas que pertenece a la categoría ingresada.
+El sistema muestra solo las tareas que pertenece a la categoría ingresada.
