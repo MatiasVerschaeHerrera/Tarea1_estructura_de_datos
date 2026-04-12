@@ -37,13 +37,26 @@ void registrar_categorias(List *categorias) {
   printf("========================================\n");
   
   char categoria[51];
-  printf("Ingresa la categoria: ");
-  scanf(" %50[^\n]", categoria);
-  // compruebo si se ingreso correctamente la categoria
-  if(strlen(categoria) == 0 || strlen(categoria) > 51){
-    printf("Error al ingresar la categoria.\n");
-    return;
-  }
+  int valido;
+  do{
+    valido = 1;
+    printf("Ingresa la categoria: ");
+    if(fgets(categoria, sizeof(categoria), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(categoria, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        categoria[strcspn(categoria, "\n")] = '\0';
+      }
+    }
+  }while(valido == 0);
 
   // Reviso la lista de categorias por completo, para no ingresar una categoria existente
   if(categorias != NULL){
@@ -51,7 +64,7 @@ void registrar_categorias(List *categorias) {
 
     while(aux != NULL){
       if(strcmp(aux, categoria) == 0){
-        printf("Categoria existente.\n");
+        printf("Error: categoria existente.\n");
         return;
       }
       aux = list_next(categorias);
@@ -77,9 +90,27 @@ void eliminar_categoria(List *categorias, List *listaTareas){
     return;
   }
 
-  printf("Ingresa Categoria a Eliminar: ");
   char categoria[51];
-  scanf(" %50[^\n]", categoria);
+  int valido;
+  do{
+    valido = 1;
+    printf("Ingresa Categoria a Eliminar: ");
+    if(fgets(categoria, sizeof(categoria), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(categoria, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        categoria[strcspn(categoria, "\n")] = '\0';
+      }
+    }
+  }while(valido == 0);
 
   // recorro toda la lista para buscar si existe la categoria a elminar
   // el while termina cuando encuentra la categoria a eliminar o al recorrer la lista completa
@@ -89,7 +120,7 @@ void eliminar_categoria(List *categorias, List *listaTareas){
 
   // si no encuentra la categoria escribe un mensaje diciendo que no existe la categoria
   if(auxCategoria == NULL){
-    printf("No existe la categoria.\n");
+    printf("Error: no existe la categoria.\n");
     return;
   }
   // elimino la categoria y libero la memoria
@@ -123,7 +154,7 @@ void mostrar_categorias(List *categorias) {
   
   char *aux = list_first(categorias);
   if(aux == NULL){
-    printf("No existen categorias.\n");
+    printf("Error: no existen categorias.\n");
     return;
   }
 
@@ -146,14 +177,26 @@ void registrar_tarea(Queue *tareas, List *categorias){
   Tarea *tarea = (Tarea *) malloc(sizeof(Tarea));
 
   //ingresar categoria
-  printf("Ingresa la categoria de la tarea: ");
-  scanf(" %50[^\n]", tarea->categoria);
-
-  // compruebo si se ingreso correctamente la categoria
-  if(strlen(tarea->categoria) == 0 || strlen(tarea->categoria) > 51){
-    printf("Error al ingresar la categoria.\n");
-    return;
-  }
+  int valido;
+  do{
+    valido = 1;
+    printf("Ingresa la categoria de la tarea: ");
+    if(fgets(tarea->categoria, sizeof(tarea->categoria), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(tarea->categoria, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        tarea->categoria[strcspn(tarea->categoria, "\n")] = '\0';
+      }
+    }
+  }while(valido == 0);
 
   // busco si existe la categoria a ingresar
   char *auxCategoria = list_first(categorias);
@@ -167,27 +210,40 @@ void registrar_tarea(Queue *tareas, List *categorias){
   }
   // se recorrio por completo la lista y no se encontro la categoria
   if(auxCategoria == NULL){
-    printf("Error al ingresar la categoria. La categoria no existe.\n");
+    printf("Error: la categoria no existe.\n");
     printf("Ingrese una categoria existente.\n");
     return;
   }
 
 
   // ingresar nombre
-  printf("\nIngresa el nombre de la tarea: ");
-  scanf(" %100[^\n]", tarea->nombre);
-  // compruebo si se ingreso correctamente el nombre
-  if(strlen(tarea->nombre) == 0 || strlen(tarea->nombre) >101){
-    printf("Error al ingresar el nombre.\n");
-    return;
-  }
+    int valido2;
+  do{
+    valido2 = 1;
+    printf("\nIngresa el nombre de la tarea: ");
+    if(fgets(tarea->nombre, sizeof(tarea->nombre), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(tarea->nombre, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido2 = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        tarea->nombre[strcspn(tarea->nombre, "\n")] = '\0';
+      }
+    }
+  }while(valido2 == 0);
 
   Tarea *auxNombre = queue_front(tareas);
   // recorro la lista de tareas
   while(auxNombre != NULL){
     // reviso si ya existe una tarea con el mismo nombre en la categoria
     if((strcmp(auxNombre->nombre, tarea->nombre) == 0) && (strcmp(tarea->categoria, auxNombre->categoria) == 0)){
-      printf("Error al ingresar la tarea. La tarea ya existe.\n");
+      printf("Error: la tarea ya existe.\n");
       printf("Ingrese otro nombre.\n");
       return;
     }
@@ -198,13 +254,27 @@ void registrar_tarea(Queue *tareas, List *categorias){
 
 
   //ingresar descripcion
-  printf("\nIngresa la descripcion de la tarea: ");
-  scanf(" %200[^\n]", tarea->descripcion);
-  // compruebo si se ingreso correctamente la descripcion
-  if(strlen(tarea->descripcion) == 0 || strlen(tarea->descripcion) > 201){
-    printf("Error al ingresar la descripcion.\n");
-  }
-  else printf("Descripcion ingresado con exito.\n");
+    int valido3;
+  do{
+    valido3 = 1;
+    printf("\nIngresa la descripcion de la tarea: ");
+    if(fgets(tarea->descripcion, sizeof(tarea->descripcion), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(tarea->descripcion, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido3 = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        tarea->descripcion[strcspn(tarea->descripcion, "\n")] = '\0';
+      }
+    }
+  }while(valido3 == 0);
+  printf("Descripcion ingresado con exito.\n");
 
   // ingreso la hora
   tarea->horaRegistro = time(NULL);
@@ -297,14 +367,26 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
   
   char *auxCategoria = list_first(listaCategorias);
   char categoriaVer[51];
-  printf("Ingresa la categoria: ");
-  scanf(" %50[^\n]", categoriaVer);
-
-  // compruebo si se ingreso correctamente la categoria
-  if(strlen(categoriaVer) == 0 || strlen(categoriaVer) > 51){
-    printf("Error al ingresar la categoria.\n");
-    return;
-  }
+    int valido;
+  do{
+    valido = 1;
+    printf("Ingresa la categoria: ");
+    if(fgets(categoriaVer, sizeof(categoriaVer), stdin)){
+      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 50 caracteres y el buffer se lleno
+      if(strchr(categoriaVer, '\n') == NULL){
+        printf("Error: excede el maximo de caracteres permitidos.\n");
+        int c;
+        // elimino los caracteres sobrantes para que la proxima lectura no los lea
+        while((c = getchar()) != '\n' && c != EOF);
+        valido = 0;
+      }
+      else{
+        // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
+        categoriaVer[strcspn(categoriaVer, "\n")] = '\0';
+      }
+    }
+  }while(valido == 0);
 
   // recorro la lista de categorias, para ver contiene la categoria a revisar
   while(auxCategoria != NULL){
@@ -344,6 +426,10 @@ int main() {
     printf("Ingrese su opción: ");
     scanf(" %c", &opcion); // Nota el espacio antes de %c para consumir el
                            // newline anterior
+
+    // limpia el buffer de entrada despues de leer la opcion del menu con scanf
+    int c;
+    while((c = getchar()) != '\n' && c != EOF);
 
     switch (opcion) {
     case '1':
