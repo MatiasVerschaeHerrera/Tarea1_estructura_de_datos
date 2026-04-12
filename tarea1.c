@@ -126,7 +126,7 @@ void eliminar_categoria(List *categorias, List *listaTareas){
   // recorro toda la lista para buscar si existe la categoria a elminar
   // el while termina cuando encuentra la categoria a eliminar o al recorrer la lista completa
   while(auxCategoria != NULL && strcmp(auxCategoria, categoria) != 0){
-      auxCategoria = list_next(categorias);
+    auxCategoria = list_next(categorias);
   }
 
   // si no encuentra la categoria escribe un mensaje diciendo que no existe la categoria
@@ -149,7 +149,6 @@ void eliminar_categoria(List *categorias, List *listaTareas){
         auxTareas = list_first(listaTareas);
       }
       else auxTareas = list_next(listaTareas);
-      
     }
   }
   printf("Categoria eliminada con exito.\n");
@@ -463,8 +462,8 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
   // reviso si existe una tarea con esa categoria y la imprimo con un contador
   while(auxTarea != NULL){
     if(strcmp(auxTarea->categoria, categoriaVer) == 0){
-    printf("%d) nombre de la tarea: %s\n", cont, auxTarea->nombre);
-    cont++;
+      printf("%d) nombre de la tarea: %s\n", cont, auxTarea->nombre);
+      cont++;
     }
     auxTarea = queue_next(listaTareas);
   }
