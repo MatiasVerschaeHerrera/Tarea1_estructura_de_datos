@@ -16,8 +16,8 @@ void mostrarMenuPrincipal() {
   puts("2) Eliminar Categoría");
   puts("3) Mostrar Categorías");
   puts("4) Registrar Tarea");
-  puts("5) Atender Siguiente tarea");
-  puts("6) Visualización De tareas");
+  puts("5) Atender Siguiente Tarea");
+  puts("6) Visualización de Tareas");
   puts("7) Filtrado por Categoría");
   puts("8) Salir");
 }
@@ -37,6 +37,8 @@ void registrar_categorias(List *categorias) {
   printf("========================================\n");
   
   char categoria[51];
+  // creo la variable valido para saber si la categoria fue ingresada correctamente
+  // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
   int valido;
   do{
     valido = 1;
@@ -54,6 +56,7 @@ void registrar_categorias(List *categorias) {
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         categoria[strcspn(categoria, "\n")] = '\0';
+        // comprueba si el usuario no escribio caracteres
         if(strlen(categoria) == 0){
           printf("Error: categoria vacia.\n");
           valido = 0;
@@ -68,7 +71,8 @@ void registrar_categorias(List *categorias) {
   while(aux != NULL){
     if(strcmp(aux, categoria) == 0){
       printf("Error: categoria existente.\n");
-      return;      }
+      return;      
+    }
     aux = list_next(categorias);
   }
 
@@ -92,6 +96,8 @@ void eliminar_categoria(List *categorias, List *listaTareas){
   }
 
   char categoria[51];
+  // creo la variable valido para saber si la categoria fue ingresada correctamente
+  // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
   int valido;
   do{
     valido = 1;
@@ -188,6 +194,8 @@ void registrar_tarea(Queue *tareas, List *categorias){
   //ingresar categoria
   char * auxCategoria;
   do{
+    // creo la variable valido para saber si la categoria fue ingresada correctamente
+    // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
     int valido;
     do{
       valido = 1;
@@ -205,6 +213,7 @@ void registrar_tarea(Queue *tareas, List *categorias){
         else{
           // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
           tarea->categoria[strcspn(tarea->categoria, "\n")] = '\0';
+          // comprueba si el usuario no escribio caracteres
           if(strlen(tarea->categoria) == 0){
             printf("Error: categoria vacia.\n");
             valido = 0;
@@ -228,12 +237,15 @@ void registrar_tarea(Queue *tareas, List *categorias){
       printf("Error: la categoria no existe.\n");
       printf("Ingrese una categoria existente.\n");
     }
+  // si la categoria no existe, le pido al usuario que ingrese una existente
   }while(auxCategoria == NULL);
 
 
   // ingresar nombre
   Tarea *auxNombre;
   do{
+    // creo la variable valido2 para saber si la categoria fue ingresada correctamente
+    // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
     int valido2;
     do{
       valido2 = 1;
@@ -251,6 +263,7 @@ void registrar_tarea(Queue *tareas, List *categorias){
         else{
           // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
           tarea->nombre[strcspn(tarea->nombre, "\n")] = '\0';
+          // comprueba si el usuario no escribio caracteres
           if(strlen(tarea->nombre) == 0){
             printf("Error: nombre vacio.\n");
             valido2 = 0;
@@ -270,11 +283,14 @@ void registrar_tarea(Queue *tareas, List *categorias){
       }
         auxNombre = queue_next(tareas);
     }
+  // si la tarea ya existe en la categoria, le pido al usuario ingresar nuevamente el nombre de la tarea
   }while(auxNombre != NULL);
   // si no existe una tarea con el mismo nombre en la categoria, avanzo al siguiente paso
   printf("Nombre ingresado con exito.\n");
 
   //ingresar descripcion
+  // creo la variable valido3 para saber si la categoria fue ingresada correctamente
+  // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
   int valido3;
   do{
     valido3 = 1;
@@ -292,6 +308,7 @@ void registrar_tarea(Queue *tareas, List *categorias){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         tarea->descripcion[strcspn(tarea->descripcion, "\n")] = '\0';
+        // comprueba si el usuario no escribio caracteres
         if(strlen(tarea->descripcion) == 0){
           printf("Error: descripcion vacia.\n");
           valido3 = 0;
@@ -399,6 +416,8 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
   char *auxCategoria;
   char categoriaVer[51];
   do{
+    // creo la variable valido para saber si la categoria fue ingresada correctamente
+    // si valido se queda en 1 significa que se ingreso la categoria, pero si cambia a 0 hubo un error
     int valido;
     do{
       valido = 1;
@@ -416,6 +435,7 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
         else{
           // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
           categoriaVer[strcspn(categoriaVer, "\n")] = '\0';
+          // comprueba si el usuario no escribio caracteres
           if(strlen(categoriaVer) == 0){
             printf("Error: categoria vacia.\n");
             valido = 0;
@@ -424,7 +444,7 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
       }
     }while(valido == 0);
 
-    // recorro la lista de categorias, para ver contiene la categoria a revisar
+    // recorro la lista de categorias, para ver si contiene la categoria a revisar
     auxCategoria = list_first(listaCategorias);
     while(auxCategoria != NULL){
       // encuentro la categoria a revisar
@@ -435,6 +455,7 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
       printf("Error: la categoria no existe.\n");
       printf("Escriba una categoria existente\n");
     }
+  // si la categoria no existe, le pido que ingrese una existente
   }while(auxCategoria == NULL);
 
   Tarea *auxTarea = queue_front(listaTareas);
@@ -447,6 +468,7 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
     }
     auxTarea = queue_next(listaTareas);
   }
+  // si el contador se mantiene en 0, significa que no hay tareas en esa categoria
   if(cont - 1 == 0) printf("No hay tareas con esta categoria.\n");
 }
 
