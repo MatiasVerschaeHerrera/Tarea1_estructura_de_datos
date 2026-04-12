@@ -63,16 +63,13 @@ void registrar_categorias(List *categorias) {
   }while(valido == 0);
 
   // Reviso la lista de categorias por completo, para no ingresar una categoria existente
-  if(categorias != NULL){
-    char *aux = list_first(categorias);
+  char *aux = list_first(categorias);
 
-    while(aux != NULL){
-      if(strcmp(aux, categoria) == 0){
-        printf("Error: categoria existente.\n");
-        return;
-      }
-      aux = list_next(categorias);
-    }
+  while(aux != NULL){
+    if(strcmp(aux, categoria) == 0){
+      printf("Error: categoria existente.\n");
+      return;      }
+    aux = list_next(categorias);
   }
 
   // si es que la categoria a ingresar no existe, la agrego :)
@@ -182,6 +179,10 @@ void registrar_tarea(Queue *tareas, List *categorias){
   printf("         Registrar nueva Tarea\n");
   printf("========================================\n");
 
+  if(list_first(categorias) == NULL){
+    printf("Error: no existen categorias.\n Registre una primero.\n");
+    return;
+  }
   Tarea *tarea = (Tarea *) malloc(sizeof(Tarea));
 
   //ingresar categoria
@@ -390,7 +391,7 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
   printf("========================================\n");
 
   // si la lista de categorias esta vacia, informo que no existen categorias
-  if(listaCategorias == NULL){
+  if(list_first(listaCategorias) == NULL){
     printf("No extisten categorias");
     return;
   }
