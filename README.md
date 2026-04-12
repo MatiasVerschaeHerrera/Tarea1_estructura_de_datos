@@ -1,15 +1,16 @@
-# SISTEMA DE GESTION DE TAREAS
+# SISTEMA DE GESTIÓN DE TAREAS
 
-# Descripcion
+# Descripción
 
-Este sistema permite a los usuarios registrar  y gestionar las tareas. Los usuarios pueden crear y eliminar categorias, 
-ingresar las tareas por categoria y atender las tareas. Este programa fue diseño para mejorar la eficiencia de las tareas de los usuarios,
-asegurando que atiendan todas las tareas por orden de llegada.
+Este sistema permite a los usuarios registrar  y gestionar las tareas. Los usuarios pueden crear y eliminar categorías, 
+ingresar las tareas por categoría y atender las tareas. Este programa fue diseñado para mejorar la eficiencia de las tareas de los usuarios,
+asegurando que se atiendan según su orden de llegada.
 
 # Como compilar y ejecutar
 
-Este sistema fue desarrollado en lenguaje C, se puede ejecutar usando **Visual Studio Code** junto con una extension
+Este sistema fue desarrollado en lenguaje C y se puede ejecutar usando **Visual Studio Code** junto con una extension
 para **C/C++ Extension Pack** de Microsfot.
+
 Para comenzar a trabajar con el sistema, sigue estos pasos:
 
 # Requisitos previos:
@@ -20,10 +21,10 @@ Para comenzar a trabajar con el sistema, sigue estos pasos:
 
 # Pasos para compilar y ejecutar:
 
-1. Descarga y comprime el archivo `.zip` en una carpeta de tu eleccion.
+1. Descarga y comprime el archivo `.zip` en una carpeta de tu elección.
 2. Abre el proyecto en Visual Studio Code.
-- Incia Visual Studio Code.
-- Selecciona `Archivo > Abrir carpeta...` y elige la carpeta donde descomprimiste el proyecto.
+- Inicia Visual Studio Code.
+- Selecciona `Archivo > Abrir carpeta...` y elige la carpeta en la que descomprimiste el proyecto.
 3. Compila el codigo:
 - Abre el archivo principal (`tarea1.c`).
 - Abre la terminal integrada (`terminal > Nueva terminal`).
@@ -32,7 +33,7 @@ Para comenzar a trabajar con el sistema, sigue estos pasos:
 gcc *.c -o tarea1
 ```
 4. Ejecuta el programa:
-- Una vez compilado, puedes ejecutar la aplicacion con:
+- Una vez compilado, puedes ejecutar la aplicación con:
 ```
 ./tarea1
 ```
@@ -40,66 +41,65 @@ gcc *.c -o tarea1
 # Funcionalidades
 
 # Funcionando Correctamente:
-- Crear categorias.
-- Eliminar categorias junto a las tareas que esten en ella.
-- Mostrar todas las categorias creadas.
-- Registrar tareas, guardando su nombre, descripcion, categoria, hora y fecha de ingreso.
-- Atender tareas en orden de primera ingresada.
+- Crear categorías.
+- Eliminar categorías junto a las tareas que esten en ella.
+- Mostrar todas las categorías creadas.
+- Registrar tareas, guardando su nombre, descripción, categoría, hora y fecha de ingreso.
+- Atender tareas según su orden de ingreso.
 - Mostrar todas las tareas por realizar.
-- Mostrar las tareas filtrando por categoria.
+- Mostrar las tareas filtrando por categoría.
 
 # A mejorar
-- Permitir la personalizacion de tareas una vez creadas.
+- Permitir la personalización de tareas una vez creadas.
 - Mejorar la interfaz para el usuario.
 
 # Ejemplo de uso
  
-# Paso 1: Registrar una nueva categoria
-Se comienza creando una categoria para las tareas.
+# Paso 1: Registrar una nueva categoría
+Se comienza creando una categoría para las tareas.
 ```
-Opcion seleccionada: 1) Nueva Categoria
-Ingrese la categoria: Universidad
-Categoria Agregada con Exito. 
+Opción seleccionada: 1) Nueva Categoría
+Ingrese la categoría: Universidad
+Categoría Agregada con Exito. 
 ```
-El sistema registra la categoria Universidad. 
+El sistema registra la categoría Universidad. 
 
-# Paso 2: Registar una nueva tarea
-Teniendo una categoria agregada, puedo registar tareas en esa categoria.
+# Paso 2: Registrar una nueva tarea
+Teniendo una categoría agregada, puede registrar tareas en esa categoría.
 ```
-Opcion seleccionada: 4) Registrar tarea
-Ingresa el categoria de la tarea: Universidad
-Categoria ingresa con exito. 
+Opción seleccionada: 4) Registrar tarea
+Ingresa el categoría de la tarea: Universidad
+Categoría ingresa con éxito. 
 
 Ingresa el nombre de la tarea: Tarea estructura de datos
-Nombre ingresado con exito.
+Nombre ingresado con éxito.
 
-Ingresa la descripcion de la tarea: Entregar para el dia 12 de abril
-Descripcion ingresada con exito.
+Ingresa la descripción de la tarea: Entregar para el dia 12 de abril
+Descripción ingresada con éxito.
 ```
-El sistema va verificando, si se ingreso correctamente la informacion. Luego la ingresa en la categoria.
+El sistema va verificando, si se ingresó correctamente la información. Luego la ingresa en la categoría.
 
-# Paso 3: Visualizacion de tareas
-El usuario puede visualizar todas las tareas registras.
+# Paso 3: Visualización de tareas
+El usuario puede visualizar todas las tareas registradas.
 ```
-Opcion seleccionada: 6) Visualizacion de Tareas
+Opción seleccionada: 6) Visualización de Tareas
 1) nombre: Tarea estructura de datos
-   categoria: Universidad
+   categoría: Universidad
    Ingreso: 11:28 11/04/2026
    ```
-El sistema muestra todas las tareas registradas en orden de ingreso
+El sistema muestra todas las tareas registradas en orden de ingreso.
 
 
-# paso 4: Atender siguiente tarea
-El usuario informa si realizo la tarea
+# Paso 4: Atender siguiente tarea
+El usuario informa si realizó la tarea
 ```
-Opcion seleccionada: 5) Atender Siguiente Tarea
+Opción seleccionada: 5) Atender Siguiente Tarea
 Atendiendo: Tarea estructura de datos.
-Descripcion: entregar para el dia 12 de abriil.
-Categoria: Universidad.
+Descripción: entregar para el día 12 de abril.
+Categoría: Universidad.
 Hora y fecha de ingreso: 11:28 11/04/2026
 
-¿Realizo la tarea? (Si/No): Si
+¿Realizó la tarea? (Si/No): Si
 Tarea realizada!!!
 ```
-El sistema muestra la informacion de la tarea a realiazar y pregunta si se completo, para eliminarla
-
+El sistema muestra la información de la tarea a realizar y pregunta si se completó, para eliminarla.
