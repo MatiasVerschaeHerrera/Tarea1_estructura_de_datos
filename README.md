@@ -29,7 +29,7 @@ Para comenzar a trabajar con el sistema, sigue estos pasos:
 - Abre la terminal integrada (`terminal > Nueva terminal`).
 - En la terminal, compila el programa con el siguiente comando:
 ```
-gcc *.c -0 tarea1
+gcc *.c -o tarea1
 ```
 4. Ejecuta el programa:
 - Una vez compilado, puedes ejecutar la aplicacion con:
@@ -47,9 +47,6 @@ gcc *.c -0 tarea1
 - Atender tareas en orden de primera ingresada.
 - Mostrar todas las tareas por realizar.
 - Mostrar las tareas filtrando por categoria.
-
-# problemas conocidos
-- Si me paso de los caracteres permitidos al momento de ingresar los datos, el programa suelta error.
 
 # A mejorar
 - Permitir la personalizacion de tareas una vez creadas.
@@ -72,8 +69,10 @@ Teniendo una categoria agregada, puedo registar tareas en esa categoria.
 Opcion seleccionada: 4) Registrar tarea
 Ingresa el categoria de la tarea: Universidad
 Categoria ingresa con exito. 
+
 Ingresa el nombre de la tarea: Tarea estructura de datos
 Nombre ingresado con exito.
+
 Ingresa la descripcion de la tarea: Entregar para el dia 12 de abril
 Descripcion ingresada con exito.
 ```
@@ -87,6 +86,7 @@ Opcion seleccionada: 6) Visualizacion de Tareas
    categoria: Universidad
    Ingreso: 11:28 11/04/2026
    ```
+El sistema muestra todas las tareas registradas en orden de ingreso
 
 
 # paso 4: Atender siguiente tarea
