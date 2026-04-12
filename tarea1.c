@@ -54,6 +54,10 @@ void registrar_categorias(List *categorias) {
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         categoria[strcspn(categoria, "\n")] = '\0';
+        if(strlen(categoria) == 0){
+          printf("Error: categoria vacia.\n");
+          valido = 0;
+        }
       }
     }
   }while(valido == 0);
@@ -108,6 +112,10 @@ void eliminar_categoria(List *categorias, List *listaTareas){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         categoria[strcspn(categoria, "\n")] = '\0';
+        if(strlen(categoria) == 0){
+          printf("Error: categoria vacia.\n");
+          valido = 0;
+        }
       }
     }
   }while(valido == 0);
@@ -194,6 +202,10 @@ void registrar_tarea(Queue *tareas, List *categorias){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         tarea->categoria[strcspn(tarea->categoria, "\n")] = '\0';
+        if(strlen(tarea->categoria) == 0){
+          printf("Error: categoria vacia.\n");
+          valido = 0;
+        }
       }
     }
   }while(valido == 0);
@@ -222,8 +234,8 @@ void registrar_tarea(Queue *tareas, List *categorias){
     valido2 = 1;
     printf("\nIngresa el nombre de la tarea: ");
     if(fgets(tarea->nombre, sizeof(tarea->nombre), stdin)){
-      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
-      // escribio mas de 50 caracteres y el buffer se lleno
+      // fgets lee hasta 100 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 100 caracteres y el buffer se lleno
       if(strchr(tarea->nombre, '\n') == NULL){
         printf("Error: excede el maximo de caracteres permitidos.\n");
         int c;
@@ -234,6 +246,10 @@ void registrar_tarea(Queue *tareas, List *categorias){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         tarea->nombre[strcspn(tarea->nombre, "\n")] = '\0';
+        if(strlen(tarea->nombre) == 0){
+          printf("Error: nombre vacio.\n");
+          valido2 = 0;
+        }
       }
     }
   }while(valido2 == 0);
@@ -259,8 +275,8 @@ void registrar_tarea(Queue *tareas, List *categorias){
     valido3 = 1;
     printf("\nIngresa la descripcion de la tarea: ");
     if(fgets(tarea->descripcion, sizeof(tarea->descripcion), stdin)){
-      // fgets lee hasta 50 caracteres + '\n', si no se encuentra '\n' significa que el usuario
-      // escribio mas de 50 caracteres y el buffer se lleno
+      // fgets lee hasta 200 caracteres + '\n', si no se encuentra '\n' significa que el usuario
+      // escribio mas de 200 caracteres y el buffer se lleno
       if(strchr(tarea->descripcion, '\n') == NULL){
         printf("Error: excede el maximo de caracteres permitidos.\n");
         int c;
@@ -271,6 +287,10 @@ void registrar_tarea(Queue *tareas, List *categorias){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         tarea->descripcion[strcspn(tarea->descripcion, "\n")] = '\0';
+        if(strlen(tarea->descripcion) == 0){
+          printf("Error: descripcion vacia.\n");
+          valido3 = 0;
+        }
       }
     }
   }while(valido3 == 0);
@@ -384,6 +404,10 @@ void ver_por_categoria(List *listaCategorias, Queue *listaTareas){
       else{
         // cambio el '\n' del fgets por un '\0' para eliminar el salto de linea
         categoriaVer[strcspn(categoriaVer, "\n")] = '\0';
+        if(strlen(categoriaVer) == 0){
+          printf("Error: categoria vacia.\n");
+          valido = 0;
+        }
       }
     }
   }while(valido == 0);
