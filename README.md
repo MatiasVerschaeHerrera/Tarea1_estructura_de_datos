@@ -3,7 +3,8 @@
 # Descripción
 
 Este sistema permite a los usuarios registrar y gestionar sus tareas. Los usuarios pueden crear y eliminar categorías, 
-ingresar las tareas segun su categoría y atenderlas. 
+ingresar las tareas segun su categoría y atenderlas.
+
 Este programa fue diseñado para mejorar la eficiencia de las tareas de los usuarios, asegurando que se atiendan según su orden de llegada.
 
 # Como compilar y ejecutar
