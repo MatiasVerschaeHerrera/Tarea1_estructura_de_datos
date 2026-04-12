@@ -9,7 +9,7 @@ asegurando que se atiendan según su orden de llegada.
 # Como compilar y ejecutar
 
 Este sistema fue desarrollado en lenguaje C y se puede ejecutar usando **Visual Studio Code** junto con una extension
-para **C/C++ Extension Pack** de Microsfot.
+para **C/C++ Extension Pack** de Microsoft.
 
 Para comenzar a trabajar con el sistema, sigue estos pasos:
 
@@ -21,7 +21,7 @@ Para comenzar a trabajar con el sistema, sigue estos pasos:
 
 # Pasos para compilar y ejecutar:
 
-1. Descarga y comprime el archivo `.zip` en una carpeta de tu elección.
+1. Descarga y descomprime el archivo `.zip` en una carpeta de tu elección.
 2. Abre el proyecto en Visual Studio Code.
 - Inicia Visual Studio Code.
 - Selecciona `Archivo > Abrir carpeta...` y elige la carpeta en la que descomprimiste el proyecto.
@@ -49,6 +49,9 @@ gcc *.c -o tarea1
 - Mostrar todas las tareas por realizar.
 - Mostrar las tareas filtrando por categoría.
 
+# Problemas conocidos
+- Ninguno. Todas las funcionalidades implementadas funcionan correctamente.
+
 # A mejorar
 - Permitir la personalización de tareas una vez creadas.
 - Mejorar la interfaz para el usuario.
@@ -68,8 +71,8 @@ El sistema registra la categoría Universidad.
 Teniendo una categoría agregada, puede registrar tareas en esa categoría.
 ```
 Opción seleccionada: 4) Registrar tarea
-Ingresa el categoría de la tarea: Universidad
-Categoría ingresa con éxito. 
+Ingresa la categoría de la tarea: Universidad
+Categoría ingresada con éxito. 
 
 Ingresa el nombre de la tarea: Tarea estructura de datos
 Nombre ingresado con éxito.
@@ -103,3 +106,32 @@ Hora y fecha de ingreso: 11:28 11/04/2026
 Tarea realizada!!!
 ```
 El sistema muestra la información de la tarea a realizar y pregunta si se completó, para eliminarla.
+
+# Otras funciones
+ 
+# Eliminar una categoria
+El usuario puede eliminar una categoría junto a todas sus tareas.
+```
+Opción seleccionada: 2) Eliminar Categoría
+Ingresa Categoria a Eliminar: Universidad
+Categoria eliminada con exito
+```
+El sistema elimina la categoría y todas las tareas que pertenecían a ella.
+
+# Mostrar categorías
+El usuario puede ver todas las categorías registradas.
+```
+Opción seleccionada: 3) Mostrar Categorías
+1) Universidad
+2) Trabajo
+```
+El sistema enumera y muestra todas las categorias registradas.
+
+# Filtrar tareas por categoría
+El usuario puede ver las tareas de una categoría específica.
+```
+Opción seleccionada: Filtrado por Categoría
+Ingresa la categoría: Universidad
+1) nombre de la tarea: Tarea estructura de datos
+```
+el sistema muestra solo las tareas que pertenece a la categoría ingresada.
