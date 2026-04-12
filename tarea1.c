@@ -366,7 +366,7 @@ void atender_tarea(Queue *listaTareas){
   // si la respuesta es "Si" elimino la tarea
   if(strcmp(respuesta, "Si") == 0){
     free(queue_remove(listaTareas));
-    printf("Tarea realizada!!!.\n");
+    printf("¡¡¡Tarea realizada!!!.\n");
     return;
   }
   // si la respuesta es "No", digo que vuelva cuando este hecha
