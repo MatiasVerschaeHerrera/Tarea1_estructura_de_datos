@@ -40,7 +40,7 @@ gcc *.c -o tarea1
 
 # Funcionalidades
 
-# Funcionando Correctamente:
+## Funcionando Correctamente:
 - Crear categorías.
 - Eliminar categorías junto a las tareas que esten en ella.
 - Mostrar todas las categorías creadas.
@@ -49,16 +49,16 @@ gcc *.c -o tarea1
 - Mostrar todas las tareas por realizar.
 - Mostrar las tareas filtrando por categoría.
 
-# Problemas conocidos
+## Problemas conocidos
 - Ninguno. Todas las funcionalidades implementadas funcionan correctamente.
 
-# A mejorar
+## A mejorar
 - Permitir la personalización de tareas una vez creadas.
 - Mejorar la interfaz para el usuario.
 
 # Ejemplo de uso
  
-# Paso 1: Registrar una nueva categoría
+## Paso 1: Registrar una nueva categoría
 Se comienza creando una categoría para las tareas.
 ```
 Opción seleccionada: 1) Nueva Categoría
@@ -67,7 +67,7 @@ Categoría Agregada con Exito.
 ```
 El sistema registra la categoría Universidad. 
 
-# Paso 2: Registrar una nueva tarea
+## Paso 2: Registrar una nueva tarea
 Teniendo una categoría agregada, puede registrar tareas en esa categoría.
 ```
 Opción seleccionada: 4) Registrar tarea
@@ -82,7 +82,7 @@ Descripción ingresada con éxito.
 ```
 El sistema va verificando, si se ingresó correctamente la información. Luego la ingresa en la categoría.
 
-# Paso 3: Visualización de tareas
+## Paso 3: Visualización de tareas
 El usuario puede visualizar todas las tareas registradas.
 ```
 Opción seleccionada: 6) Visualización de Tareas
@@ -93,7 +93,7 @@ Opción seleccionada: 6) Visualización de Tareas
 El sistema muestra todas las tareas registradas en orden de ingreso.
 
 
-# Paso 4: Atender siguiente tarea
+## Paso 4: Atender siguiente tarea
 El usuario informa si realizó la tarea
 ```
 Opción seleccionada: 5) Atender Siguiente Tarea
@@ -109,7 +109,7 @@ El sistema muestra la información de la tarea a realizar y pregunta si se compl
 
 # Otras funciones
  
-# Eliminar una categoria
+## Eliminar una categoria
 El usuario puede eliminar una categoría junto a todas sus tareas.
 ```
 Opción seleccionada: 2) Eliminar Categoría
@@ -118,7 +118,7 @@ Categoria eliminada con exito
 ```
 El sistema elimina la categoría y todas las tareas que pertenecían a ella.
 
-# Mostrar categorías
+## Mostrar categorías
 El usuario puede ver todas las categorías registradas.
 ```
 Opción seleccionada: 3) Mostrar Categorías
@@ -127,7 +127,7 @@ Opción seleccionada: 3) Mostrar Categorías
 ```
 El sistema enumera y muestra todas las categorias registradas.
 
-# Filtrar tareas por categoría
+## Filtrar tareas por categoría
 El usuario puede ver las tareas de una categoría específica.
 ```
 Opción seleccionada: Filtrado por Categoría
